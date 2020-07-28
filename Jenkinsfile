@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'Hello world'
+                withMaven(maven : 'Maven'){
+                sh 'mvn clean install'
             }
         }
     }
+}
 }
